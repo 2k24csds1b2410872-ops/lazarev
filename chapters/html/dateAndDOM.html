@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Date and DOM properties & Methods </title>
+</head>
+<body>
+  <button class="my-button">button </button>
+  <div class="my-div"> This is the div</div>
+  <script>
+    // by my date we can get the current date and time
+    // let myDate=new Date();
+    // console.log(myDate);
+    // console.log(myDate.getDate());
+    // console.log(myDate.getDay());
+    // console.log(myDate.getFullYear());
+    // console.log(myDate.getHours());
+    // console.log(myDate.getMinutes());
+    // console.log(myDate.getTime());
+    // it is for find the timestamps and scheduling
+    // DOM properties & Methods
+    // DOM properties
+    // we get this by document.function()
+    // by the location we can get the location of the browser
+    // title we get the title of the file
+    // href means url
+    // domain means domain like which is at the startin gof the page 
+    // by innerHTML and innerText we can change the html and text
+    // classlist means which classes are apply
+    // DOM methods
+    // getElementId by this we get the id of the button
+    // querySelector byb this we can perform many function
+    // classList:add(),remove() by this we can add the class to the button the remove also
+    // by this we can create the elemnet at the document
+    // by appendChild() we can add the child at the last
+    // by removechild() we can remove the at the last
+    // by replacechild() wee can replace at the last
+   let button= document.createElement('Button');
+  //  by this m=we make the text
+   button.innerText='click me'
+  //   by this we append this text woth the div
+   document.querySelector('.my-div').appendChild(button);
+    document.querySelector('.my-div').removeChild(button);
+  </script>
+</body>
+</html>

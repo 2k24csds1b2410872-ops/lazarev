@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prcatice set of the objects</title>
+</head>
+<body>
+  <script>
+    // question one
+    let product={
+      name:'hairdryer',
+      company:'Philips',
+      price:1000,
+      'delivery-Date':'10september',
+    };
+     console.log(product);
+    //  question two
+    let company={
+      name:'kajalk dixit',
+      age:19,
+      salary:'1crore',
+      place:'mumbai',
+    };
+    let nameOf=company;
+    console.log(company);
+    nameOf.salary='2crore';
+    console.log(nameOf);
+    // question three
+    // let { deliveryDate}=product;
+    // console.log(deliveryDate);
+    console.log(product['delivery-Date']);
+    // question four
+    message='hi kajal dixit here';
+    status='student who is doing the btech';
+    let object={
+      message,
+      status,
+    };
+    console.log(object.message);
+    console.log(object.status);
+    // question five
+    let product1={
+      name:'hairdryer',
+      company:'Philips',
+      price:1000,
+      deliveryDate:'10september',
+      // isIdenticalProduct1:function(){
+      //   console.log(`the identification code of the product 1 is 1234554`);
+      // }
+    };
+    let product2={
+      name:'hairdryer',
+      company:'Philips',
+      price:1000,
+      deliveryDate:'10september',
+      // isIdenticalProduct2:function(){
+      //   console.log(`the identification code of the product 2 is 9876598`);
+      // }
+    };
+    // console.log(product1.isIdenticalProduct1);
+    // console.log(product2.isIdenticalProduct2);
+    // console.log(product1.isIdenticalProduct1==product2.isIdenticalProduct2);
+    function isIdenticalProduct(product1,product2){
+      if(typeof product1!=object || typeof product2!=object){
+        console.warn('Parameter passed was not an object');
+        return false;
+      }
+      if(product1==product2){
+        return true;
+      } else {
+        return false;
+      }
+    }
+    console.log(isIdenticalProduct(product1,product2));
+  </script>
+</body>
+</html>

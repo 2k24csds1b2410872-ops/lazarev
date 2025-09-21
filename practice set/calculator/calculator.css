@@ -1,0 +1,66 @@
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;                /* makes sure page height = full screen */
+}
+body {
+   min-height: 100vh;     
+  background-image: url('https://i.pinimg.com/736x/33/f2/76/33f276488560908a1471790b431cf244.jpg'); 
+  background-repeat: no-repeat;
+  background-size: cover;       /* cover full screen */
+  background-position: center;  /* keep it centered */ /* optional: keeps image fixed when scrolling */
+  background-color: pink;
+}
+
+.placeHolder-display{
+  background-color: pink;
+}
+.whole {
+  display: flex;
+  justify-content: center;
+  align-items: center;    
+  height: 70vh;      
+  margin: 0;                
+  color: pink;
+}
+h1{
+  margin: 2px 0px;
+  text-align: center;
+  font-size: 50px;
+  font-family:serif;
+}
+#calculatorId{
+  border: 1px solid rgb(52, 51, 51);
+  border-radius: 5px;
+  width: 380px;
+  height: 500px;
+}
+#display{
+  margin: 15px;
+  width: 85%;
+  height: 35px;
+  font-size: 25px;
+}
+#display:hover{
+  color: black;
+  background-color: white;
+}
+.button-container{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+ 
+}
+.button{
+  font-size: 40px;
+  width: 70px;
+  height: 70px;
+  margin: 5px;
+  background-color: antiquewhite;
+  border-radius: 5px;
+}
+.button:hover{
+  color: brown;
+  background-color:teal;
+}

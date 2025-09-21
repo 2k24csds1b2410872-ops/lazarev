@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Set timeout and set interval</title>
+</head>
+<body>
+  <button class="btn">Button</button>
+  <script>
+    // event listener
+  const button=document.querySelector(".btn");
+  button.addEventListener('click',event=>{console.log('I am clicked') 
+    alert('I am clicked');
+  });
+  let printDate=event =>console.log(new Date());
+  button.addEventListener('click',printDate);
+  // by this we can remove the event
+  button.removeEventListener('click',printDate);
+    let alarm=() =>
+      console.log(`Subah ho gyi , uth jaao and the time is ${new Date()}`);
+    // here we write seconds in milisecond
+   let timeId= setTimeout(alarm, 7000);
+  //   console.log('Alarm set');
+  //   console.log(`Alarm set with timeId: ${timeId}`);
+  //   // by this we can cancle the time out
+  //   clearTimeout(timeId);
+    // set interval if we have to do work again and again
+   let intervalId= setInterval(alarm, 2000);
+  //  by this we can set time for long time to cancel
+  setTimeout(() =>clearTimeout(intervalId),5000 ); 
+  // so by settimeOut se ek baar time set hota h
+  // but setInterval se baar baar kr skte h aur set krne pr ye hme ek id return krta h
+  // for each loop
+  let foods=['bread','rice','meat','pizza'];
+  foods.forEach((nums)=>console.log(nums))
+  function search(foods,nums){
+    for(let i=0; i<foods.length; i++){
+      if(foods[i]==nums){
+        console.log(`element found at ${i}`);
+        return ;
+      }
+    }
+  }
+    console.log(foods);
+
+  // inside the for each loop the return statemnet is use as break statement
+  search(foods,'rice');
+  console.log('element do  not find');
+  // filter
+  let array=[1,2,3,4,5,6,7,8,9,10];
+  let odd=array.filter((num,index)=>num%2==1)
+  console.log(odd);
+    console.log(array);
+  let arr=[1,2,3,4,5,6,7,8,9,10];
+  let squares=arr.map(num =>num*num);
+  console.log(squares);
+    console.log(arr);
+// by map and filter they apply the function at eaxh element then  make the new array and store them after that they do not change the original areray but the for each apply loop at each element and do not make the new element and if i try to store the result then it gave the undefined and do not form result
+  </script>
+</body>
+</html>

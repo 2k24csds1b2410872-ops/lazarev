@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice of DOM DATE and localStorage</title>
+  <style>
+    #my-button{
+      font-size: large;
+      height: 50px;
+      width: 50px;
+      border: none;
+      border-radius: 5px;
+    }
+    /* ao here we are applying the style over the condtion in the js so to show we use js */
+    .js-odd{
+      background-color: chocolate;
+    }
+    .js-even{
+      background-color: lawngreen;
+    }
+    /* #my-button:hover{
+      color: black;
+      background-color: white;
+    } */
+  </style>
+</head>
+<body>
+  <!-- so first thing that we can use the onclick by direct applying the function -->
+  <button id="my-button" onclick="buttonPressed();"></button>
+  <h3 id="greeting"></h3>
+  <script>
+    // since to count from 0 we first form no of ckicked then increase them and remove and add the js-odd and js-even element 
+    // here we get the the no  of clicked from the local storage 
+    let noOfTimesClicked=localStorage.getItem('noOfTimesClicked')||0;
+    
+    function buttonPressed(){
+      noOfTimesClicked++;
+      // after every click we are storing the the clicked after every click on button
+      localStorage.setItem('noOfTimesClicked',noOfTimesClicked);
+     updateButton();
+    }
+    function updateButton(){
+      // by this we select the id number of the button
+       let button=document.querySelector('#my-button');
+      //  and after that every move is take place in the button 
+       if(noOfTimesClicked%2==0){
+        button.classList.remove('js-odd');
+        button.classList.add('js-even');
+      } else{
+        button.classList.remove('js-even');
+        button.classList.add('js-odd');
+      }
+      // by this the innertext is take place inside the button whatever no of click is present there
+      button.innerText=noOfTimesClicked;
+    }
+    updateButton();
+    function doGreeting(personName='Dear'){
+      let correnttDate=new Date();
+      let hours=correnttDate.getHours();
+      if(hours>5 && hours<12){
+        document.querySelector('#greeting').innerText=`Good morning ${personName}`;
+      } else if(hours>12 && hours<18){
+      document.querySelector('#greeting').innerText=`Good evening ${personName}`;
+    } else {
+      document.querySelector('#greeting').innerText=`Good night ${personName}`;
+    }
+  }
+  doGreeting('kajal dixit');
+  </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objects</title>
+</head>
+<body>
+  <script>
+    // it is object and syntax is as same as structure in c and dictionary in python
+    let product={
+      company:'Mango',
+      price:100,
+      brand:'haphush aam',
+      location:'lucknow',
+    };//]here we can access the property of object by the use of dot(.)
+    console.log(product);
+    console.log(typeof(product));
+    console.log(product.company);
+    console.log(product.price);
+    console.log(product.location);
+    console.log(product.brand);
+    // can also access by the use of curly braces and make the name if property as string example
+    // console.log(product['company']);
+    // in this we can add or deletew the property by use of delete
+    delete product['company']
+    console.log(product);
+    // now we will learn about inside object that what we can put inside the object 
+    // first point that we can put object inside the object
+    // second point is that we can put the function inside the object because in javaScript the function is also a object
+    let insideObject={
+      company:'the great loyals',
+      itemName:'Perfume',
+      price:1000,
+      ratin:{
+        stars:4.5,
+        noOfReviews:'1 crore',
+      },
+      // after the function we direct give the curly bracket do not give name because javaScript already know that this function is inside the object so by it considered the key as name of function
+      displayPrice:function(){
+        console.log(`Price of the perfume is ${insideObject.price}`)
+      }
+    };
+    console.log(insideObject);
+    insideObject.displayPrice();
+  //     <!--Autoboxing means conversion of primitive to object  -->
+  // <!-- objevt are those which include the properties inside this -->
+  //  <!-- and primitive means the normal variable which we use here and primitives also have the the method -->
+    console.log('this is kg coding'.length)
+      console.log('hi this is kajal dixit and i my college i also known as kajal dixit and my sirname is dixit'.replace('dixit','kapoor'))
+      console.log('hi this is kajal dixit and i my college i also known as kajal dixit and my sirname is dixit'.toUpperCase())
+  </script>
+</body>
+</html>

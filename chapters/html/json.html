@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>json </title>
+</head>
+<body>
+  <!-- json is not the data type but it is the another form by which we represent the data -->
+  <!-- the json means javaScript object notation -->
+   <!-- it is not very same to js object but very similar both have the key and value and this is property and thr main difference is that key in oject s withiout the double quotes  but in the notation it is in the double quotes -->
+    <!-- json is commanly used in network cells and data storage json can be convert to string and string convert to object  by this if can convert the data and network cells whenever we need this -->
+     <!-- by JSON.stringify() convert the json in the string and JSON.parse() convert the string into the json  -->
+      <!-- we conevrt into string because string is very easy to transfer -->
+       <!-- <script>
+        let product={
+          name:'T-shirt',
+          price:789,
+          rating: {
+            stars:4.5,
+          noOfReviews:453,
+          },
+        };
+        console.log(typeof product);
+        console.log(product);
+        // here we directly convert the object to string becuase in js the object is in the json form so we do not need to convert that in json but in other language iot is needed to convert the object to json and after that convert into the string
+        // by doing this we convert our object to the string 
+        let str=JSON.stringify(product);
+         console.log(typeof str);
+        console.log(str);
+        // by this we convert our string to again the object
+        let newProduct=JSON.parse(str);
+        console.log(typeof newProduct);
+        console.log(newProduct);
+       </script> -->
+       <!-- now till now we store the object in the meomory but now we will store in the local storage which is at the internal of the browser -->
+        <!-- this is used for infinite key and storage but only in string -->
+         <!-- setItem store the value and getItem get the value form the storage -->
+          <script>
+             let product={
+          name:'T-shirt',
+          price:789,
+          rating: {
+            stars:4.5,
+          noOfReviews:453,
+          },
+        };
+        // by this we can clear the whole memory
+        localStorage.clear();
+        // localStorage.removeItem("price");
+            // localStorage.setItem('Name','Kajal dixit');
+            // localStorage.setItem('Price',1000);
+            // console.log(localStorage.getItem('Name'));
+            // localStorage.setItem('product',JSON.stringify(product));
+            // console.log(product);
+            // let newProduct=JSON.parse(localStorage.getItem('product'));
+            // console.log(newProduct);
+            // by the removeItem we can remove the data from the storage
+            delete storedProduct.price;
+            
+          </script>
+</body>
+</html>

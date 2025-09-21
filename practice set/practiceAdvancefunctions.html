@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Practice exercise Advance Functions</title>
+  <style>
+    .btn-subscribe{
+      font-size: 15px;
+      height: 20px;
+      width: 80px;
+      background-color: rgb(170, 62, 62);
+      color: white;
+      border: none;
+      border-radius: 4px;
+        transition: all 0.4s ease; 
+    }
+    /* by this the js file button will change */
+    .js-size-double{
+      font-size: 30px;
+      height: 40px;
+      width: 160px;
+    }
+      .btn2-subscribe{
+      font-size: 15px;
+      height: 20px;
+      width: 80px;
+      background-color: rgb(170, 62, 62);
+      color: white;
+      border: none;
+      border-radius: 4px;
+        transition: all 0.4s ease; 
+    }
+    /* by this the js file button will change */
+    .js-size2-double{
+      font-size: 30px;
+      height: 40px;
+      width: 160px;
+    }
+  </style>
+</head>
+<body>
+ <!-- // this is for question 3 -->
+  <!-- <button class="btn-subscribe" onclick="doubleTheSize();">subscribe</button> -->
+<!-- if i want ot add the time for increasing the size -->
+ <button class="btn-subscribe" onclick="
+ setTimeout(doubleTheSize,2000);
+ ">subscribe</button>
+ <!-- fourth question -->
+ <button class="btn2-subscribe">subscribe2</button>
+  <script>
+    // question 1 create multiply variable amd assign function  (multipy of two number)
+    let multipy=function(num1,num2){
+      return num1*num2;
+    }
+    // let multipy=num =>num *num;
+    console.log(multipy(4,5));
+    // question 2
+    let printgreeting=() => console.log('Namaste');
+    let runTwice=inputFunction =>{
+      inputFunction();
+      inputFunction();
+    };
+    runTwice(printgreeting);
+    // so here printGreeting is used as the variable inside the runTwice function
+    // question 3
+    // this is function so when i click this will find the button and add the classList of js css 
+    function doubleTheSize(){
+    let buttonElement=document.querySelector('.btn-subscribe');
+    buttonElement.classList.add('js-size-double');
+     }
+    //  fourth question in this we use event then in t=event call the function which call the js function and then increase the size
+    function doubleTheSize2(){
+    let buttonElement=document.querySelector('.btn2-subscribe');
+    buttonElement.classList.add('js-size2-double');
+     }
+    let buttonElement2=document.querySelector('.btn2-subscribe');
+    let eveeent=event=> setTimeout(doubleTheSize2,2000);
+    buttonElement2.addEventListener('click',eveeent);
+    // question fiveth
+    let array=[1,2,3,4,5,6,7,8,9,10];
+     let sum=0;
+    array.forEach(nums=> sum+=nums
+    );
+    console.log(sum);
+    // question sixth
+    let squares=array.map(num=> num*num);
+    console.log(squares);
+  </script>
+</body>
+</html>

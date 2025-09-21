@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice exercise of variables</title>
+</head>
+<body>
+  <p id="myName"></p>
+  <script>
+    let name='kajal dixit';
+    document.querySelector('#myName').innerText=name;
+    console.log(name)
+    const gst=18;
+    let costValue=Math.round(((15599-(10/100*15599))-272+(2499-(41/100*2499))-29+25+20)*(100+gst)/100);
+    console.log(costValue)
+    // now convert math to string calculation into result by use of the eval method 
+    console.log(eval('45+45'))
+    console.log(eval('costValue'))
+  </script>
+</body>
+</html>

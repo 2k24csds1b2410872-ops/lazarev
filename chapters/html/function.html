@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Function</title>
+</head>
+<body>
+  <script>
+    // let age=21;
+    // console.log(`Your age is ${age}`);
+    // age=76;
+    // console.log(`Your age is ${age}`);
+    // age=1;
+    // console.log(`Your age is ${age}`);
+   // this is without function and here we have to write again and again for typing the age 
+  //  but by the use of the fuction we can write age statement again and again just by call the function 
+  let age=21;
+  function printAge(){
+    console.log(`Your age is ${age}`)
+  }
+  printAge();
+   age=1;
+  printAge();
+  age=51;
+  printAge();
+  // now function with return statement
+  function generateRandomMpve(){
+    let randomNum=Math.random();
+    let ran=randomNum*3
+    return ran;
+  }
+  let number=generateRandomMpve();
+  console.log(number)
+    number=generateRandomMpve();
+  console.log(number)
+    number=generateRandomMpve();
+  console.log(number)
+ number=generateRandomMpve();
+  console.log(number)
+   number=generateRandomMpve();
+  console.log(number)
+  // now function with argument and parameter
+
+  // function sum( a, b){
+  //   let sumOfNum=a+b;
+  //   return sumOfNum
+  // }
+  // console.log(sum(5,6));
+  // console.log(sum(4,5));
+  // console.log(sum(41,55));
+  // console.log(sum(6,9.8));
+  // default value
+  // so in default value if there is argument is pass during call the function then it will use that argumnet as parameter but in case if there is  no argument pass then we will give it default parameter and if there is no parameter then we will use default parameter
+   function sum( a=3,b=5){
+    let sumOfNum=a+b;
+    return sumOfNum
+  }
+  console.log(sum());
+  </script>
+</body>
+</html>

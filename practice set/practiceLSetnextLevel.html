@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice exercise of functions</title>
+</head>
+<body>
+  <script>
+    // question one to check whether number is odd or even
+    let number =4637;
+    let check=(number%2==0)?console.log("number is even"):console.log("number is odd");
+    // by function to check the odd and even
+    function findOddOrEven(num){
+      if(num%2==0){
+        return 'even';
+      } else {
+        return 'odd';
+      }
+    }
+    console.log(`The number is ${findOddOrEven(468)}`)
+    // question 2 to find the largest number between two number
+    function findLargest(num1,num2){
+      if(num1>num2){
+        return num1;
+      } else {
+        return num2;
+      }
+    }
+    console.log(`the largest number between two number is ${findLargest(15,9)}`)
+    // question 3 to convert the celsius to fahrenheit
+    function convertToFrahrenheit(cel){
+      let freh=(9/5)*cel+32;
+      return freh;
+    }
+    console.log(`The conversion of celsius to fahrenheit is : ${convertToFrahrenheit(37)}`)
+    </script>
+</body>
+</html>

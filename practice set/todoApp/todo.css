@@ -1,0 +1,48 @@
+
+body{
+  font-family: Arial;
+  background-image: url("https://img.freepik.com/premium-photo/notepad-hand-drawn-floral-background-template_519183-12367.jpg");
+  background-size: cover;   
+   background-position: center; 
+  min-height: 100vh; 
+  overflow: transparent;
+  background-repeat: no-repeat;
+  background-blend-mode: lighten;
+}
+/* main{
+   display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+#main-heading{
+ text-align: center;
+  font-size: 50px;
+}
+.grid-container{
+  display: grid;
+  grid-template-columns: 200px 150px 100px;
+  column-gap: 10px;
+  row-gap: 10px;
+  margin: 10px;
+  align-items: center;
+}
+#todo-input,#todo-date{
+  padding: 10px;
+  font-size: 10px 5px;
+}
+.btn-delete{
+  color: white;
+  background-color: rgb(87,4,4);
+  border: none;
+  border-radius: 10px;
+  padding: 15px 0px;
+  cursor: pointer;
+}
+.btn-todo{
+   color: white;
+  background-color: rgb(5,119,19);
+  border: none;
+  border-radius: 10px;
+  padding: 15px 0px;
+  cursor: pointer;
+}

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cricket project exercise</title>
+  <style>
+    h1{
+      color: brown;
+    }
+    body{
+      justify-content: center;
+      text-align: center;
+      background-color: pink;
+      
+    }
+    .choice-image{
+      height: 90px;
+      width: 90px;
+      text-align: center;
+      margin: 10px;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      /* background-color: rgb(6, 21, 16); */
+    }
+   
+    #button1,#button2,#button3,#button4{
+      background-color: rgb(157, 205, 112);
+    }
+    #button4{
+      font-weight: bold;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <h1>Ball Bat and Stump</h1>
+  <!-- Buttons -->
+  <button id="button1" onclick="
+    userChoice='Ball';
+    generateComputerChoice();
+    getResult = generateResult(userChoice, computerchoice);
+    showResult(userChoice, computerchoiceMess, getResult);
+  "><img src="https://img.lovepik.com/png/20231020/Pattern-cricket-bat-clipart-ball-sports-game-arms_273920_wh1200.png" alt="bat" class="choice-image">bat</button>
+
+  <button id="button2" onclick="
+    userChoice='Bat';
+    generateComputerChoice();
+    getResult = generateResult(userChoice, computerchoice);
+    showResult(userChoice, computerchoiceMess, getResult);
+  "><img src="https://tse2.mm.bing.net/th/id/OIP.9yPgROuGoMpviqg3muxmBgHaFj?cb=thfc1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="ball" class="choice-image"> ball</button>
+
+  <button id="button3" onclick="
+    userChoice='Stump';
+    generateComputerChoice();
+    getResult = generateResult(userChoice, computerchoice);
+    showResult(userChoice, computerchoiceMess, getResult);
+  "> <img src="https://tse2.mm.bing.net/th/id/OIP.2qsppdMyYORfLsG4sTNLiAHaHa?cb=thfc1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="stump" class="choice-image">stump</button>
+  <!-- here we made the button to clera the memory from the localStorage -->
+  <button id="button4" class="choice-image" onclick="localStorage.clear()
+  score={
+    win: 0,
+      loss: 0,
+      tie: 0,
+  }">Reset</button>
+  <h3 id="user-move"></h3>
+  <h3 id="computer-move"></h3>
+  <h3 id="result"></h3>
+  <h3 id="score"></h3>
+  <script>
+    // so here first we take the scoreStr and get the score from the localStorage and then checking that the scoreStr is null or not if it is null then scoire shiulkd strat from the zero if we already play then there should the score and take that score and strat from that 
+    let scoreStr=localStorage.getItem('Score');
+    let score;
+    if(scoreStr!==null){
+      score=JSON.parse(scoreStr);
+    } else{
+    score = {
+      win: 0,
+      loss: 0,
+      tie: 0,
+    };
+  }
+  // we make this string so if we need to change anything then we can diorect;y come here and check that 
+   function displayScore() {
+        return `win: ${score.win}, loss: ${score.loss}, tie: ${score.tie}`;
+      }
+    let computerchoice;
+    let computerchoiceMess = '';
+
+    function generateComputerChoice() {
+      let randomNumber = Math.random() * 3;
+      if (randomNumber <= 1) {
+        computerchoice = 'Ball';
+        computerchoiceMess = 'Computer choice is Ball';
+      } else if (randomNumber <= 2) {
+        computerchoice = 'Bat';
+        computerchoiceMess = 'Computer choice is Bat';
+      } else {
+        computerchoice = 'Stump';
+        computerchoiceMess = 'Computer choice is Stump';
+      }
+    }
+
+    function generateResult(userChoice, computerchoice) {
+      let result = '';
+      if (userChoice === 'Ball') {
+        if (computerchoice === 'Ball') {
+          score.tie++;
+          result = 'it is a tie 😒';
+        } else if (computerchoice === 'Bat') {
+          score.loss++;
+          result = 'Computer wins 😭';
+        } else {
+          score.win++;
+          result = 'User wins 😄';
+        }
+      } else if (userChoice === 'Bat') {
+        if (computerchoice === 'Ball') {
+          score.win++;
+          result = 'User wins 😄';
+        } else if (computerchoice === 'Bat') {
+          score.tie++;
+          result = 'it is a tie 😒';
+        } else {
+          score.loss++;
+          result = 'Computer wins 😭';
+        }
+      } else if (userChoice === 'Stump') {
+        if (computerchoice === 'Ball') {
+          score.loss++;
+          result = 'Computer wins 😭';
+        } else if (computerchoice === 'Bat') {
+          score.win++;
+          result = 'User wins 😄';
+        } else {
+          score.tie++;
+          result = 'it is a tie 😒';
+        }
+      }
+      return result;
+    }
+
+    function showResult(userChoice, computerchoiceMess, getResult) {
+      // so to write anything  in the page we use and from local storage we use document.querySelector (id or class) then if we have to add the innerytext the = add the stirng
+      localStorage.setItem('Score', JSON.stringify(score));
+      document.querySelector('#user-move').innerText=userChoice!==undefined?`You have chose the ${userChoice}`:'';
+      document.querySelector('#computer-move').innerText =computerchoice!==undefined? `computer have chosen ${computerchoice}`:'';
+      document.querySelector('#result').innerText=result!==undefined?` ${getResult}`:'';
+      document.querySelector('#score').innerText=displayScore!==undefined?`your score is ${displayScore()}`:'';
+      // alert(`
+      //   User choice: ${userChoice}
+      //   ${computerchoiceMess}
+      //   ${getResult}
+      //   ${displayScore()}
+      // `);
+    }
+  </script>
+</body>
+</html>
